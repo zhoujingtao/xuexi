@@ -35,6 +35,7 @@
 "stm32g474motor\app_led.o"
 "stm32g474motor\app_main.o"
 "stm32g474motor\app_key.o"
+"stm32g474motor\app_lcddisplayed.o"
 "stm32g474motor\os_task_scheduling.o"
 --library_type=microlib --strict --scatter "stm32G474Motor\stm32G474Motor.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

@@ -8,5 +8,6 @@
 #include "app_adc.h"
 #include "app_LED.h"
 #include "app_key.h"
+#include "app_LCDDisplayed.h"
 
 #endif

@@ -32,7 +32,7 @@ void OS_Task5(void)
 
 void OS_Task6(void)
 {
-		LCD_ShowString(60, 40,(uint8_t*)"disnox", LIGHTBLUE, BLACK,32,0);	
+		app_LCDDisplayed();
 }
 
 void OS_Task7(void)

@@ -5,7 +5,7 @@
 #include "bsp.h"
 #include "adc.h"
 
-/* adcé€šé“åå­—å®šä¹‰ï¼Œæ ¹æ®è‡ªå·±çš„ä½¿ç”¨æ¥å‘½å */
+/* adcÍ¨µÀÃû×Ö¶¨Òå£¬¸ù¾İ×Ô¼ºµÄÊ¹ÓÃÀ´ÃüÃû */
 typedef enum
 {
 	adc1_ch1 = 0,//IC
@@ -22,7 +22,7 @@ typedef enum
 typedef enum
 {
 	adc2_ch1 = 0,//VBUS
-	adc2_ch2 = 1,//ç”µä½å™¨
+	adc2_ch2 = 1,//µçÎ»Æ÷
 	adc2_ch3 = 2//NT2
 } adc2_num;
 

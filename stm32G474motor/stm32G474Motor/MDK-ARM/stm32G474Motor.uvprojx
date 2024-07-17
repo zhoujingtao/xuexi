@@ -791,6 +791,16 @@
               <FileType>5</FileType>
               <FilePath>..\Driver\app\app_key.h</FilePath>
             </File>
+            <File>
+              <FileName>app_LCDDisplayed.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Driver\app\app_LCDDisplayed.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_LCDDisplayed.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Driver\app\app_LCDDisplayed.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

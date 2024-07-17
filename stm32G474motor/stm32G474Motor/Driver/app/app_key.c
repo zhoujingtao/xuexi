@@ -8,7 +8,7 @@ key_driver_t key_array[key_num];
 * @brief:      key_driver_init(void)
 * @param:		   void
 * @retval:     void
-* @details:    æŒ‰é”®é©±åŠ¨åˆå§‹åŒ–
+* @details:    °´¼üÇý¶¯³õÊ¼»¯
 ***********************************************************************
 **/
 void key_driver_init(void)
@@ -21,31 +21,31 @@ void key_driver_init(void)
 * @brief:      key_check(void)
 * @param:		   void
 * @retval:     void
-* @details:    åˆ¤æ–­æŒ‰é”®æ˜¯å¦è¢«æŒ‰ä¸‹
+* @details:    ÅÐ¶Ï°´¼üÊÇ·ñ±»°´ÏÂ
 ***********************************************************************
 **/
 void key_check(void)
 {
 	key_driver_t *key_p;
 	key_p = &key_array[key_sw1];
-	hold_filter(&key_p->bsp_hold_filter, key_1); // å¯¹ç¡¬ä»¶è¯»åˆ°çš„æŒ‰é”®çŠ¶æ€æ»¤æ³¢
+	hold_filter(&key_p->bsp_hold_filter, key_1); // ¶ÔÓ²¼þ¶Áµ½µÄ°´¼ü×´Ì¬ÂË²¨
 //	key_p = &key_array[key_sw2];
-//	hold_filter(&key_p->bsp_hold_filter, key_2); // å¯¹ç¡¬ä»¶è¯»åˆ°çš„æŒ‰é”®çŠ¶æ€æ»¤æ³¢
+//	hold_filter(&key_p->bsp_hold_filter, key_2); // ¶ÔÓ²¼þ¶Áµ½µÄ°´¼ü×´Ì¬ÂË²¨
 //	key_p = &key_array[key_sw3];
-//	hold_filter(&key_p->bsp_hold_filter, key_3); // å¯¹ç¡¬ä»¶è¯»åˆ°çš„æŒ‰é”®çŠ¶æ€æ»¤æ³¢
+//	hold_filter(&key_p->bsp_hold_filter, key_3); // ¶ÔÓ²¼þ¶Áµ½µÄ°´¼ü×´Ì¬ÂË²¨
 //	key_p = &key_array[key_sw4];
-//	hold_filter(&key_p->bsp_hold_filter, key_4); // å¯¹ç¡¬ä»¶è¯»åˆ°çš„æŒ‰é”®çŠ¶æ€æ»¤æ³¢
+//	hold_filter(&key_p->bsp_hold_filter, key_4); // ¶ÔÓ²¼þ¶Áµ½µÄ°´¼ü×´Ì¬ÂË²¨
 //	key_p = &key_array[key_sw5];
-//	hold_filter(&key_p->bsp_hold_filter, key_5); // å¯¹ç¡¬ä»¶è¯»åˆ°çš„æŒ‰é”®çŠ¶æ€æ»¤æ³¢
+//	hold_filter(&key_p->bsp_hold_filter, key_5); // ¶ÔÓ²¼þ¶Áµ½µÄ°´¼ü×´Ì¬ÂË²¨
 //	key_p = &key_array[key_sw6];
-//	hold_filter(&key_p->bsp_hold_filter, key_6); // å¯¹ç¡¬ä»¶è¯»åˆ°çš„æŒ‰é”®çŠ¶æ€æ»¤æ³¢
+//	hold_filter(&key_p->bsp_hold_filter, key_6); // ¶ÔÓ²¼þ¶Áµ½µÄ°´¼ü×´Ì¬ÂË²¨
 }
 /**
 ***********************************************************************
 * @brief:      key_array_init(void)
 * @param:		   void
 * @retval:     void
-* @details:    æŒ‰é”®ç»“æž„ä½“åˆå€¼å®šä¹‰
+* @details:    °´¼ü½á¹¹Ìå³õÖµ¶¨Òå
 ***********************************************************************
 **/
 void key_array_init(void)
@@ -54,7 +54,7 @@ void key_array_init(void)
 	key_p = &key_array[key_sw1];
 	key_p->bsp_hold_filter.hold_time = 10;
 	key_p->bsp_hold_filter.time_point = 0;
-	key_p->bsp_hold_filter.trigger_variable = 1;	// é«˜ç”µå¹³è§¦å‘
+	key_p->bsp_hold_filter.trigger_variable = 1;	// ¸ßµçÆ½´¥·¢
 	key_p->bsp_hold_filter.result = 0;
 	key_p->shield = 0;
 	key_p->press_time = 0;
@@ -120,10 +120,10 @@ void key_array_init(void)
 /**
 ***********************************************************************
 * @brief:      hold_filter(hold_filter_t *filter_p, uint32_t variable)
-* @param:		   filter_p: æŒ‰é”®è§¦å‘ç»“æž„ä½“å¥æŸ„
-* @param:		   variable: æŒ‰é”®çŠ¶æ€æ ‡å¿—
+* @param:		   filter_p: °´¼ü´¥·¢½á¹¹Ìå¾ä±ú
+* @param:		   variable: °´¼ü×´Ì¬±êÖ¾
 * @retval:     void
-* @details:    æŒ‰é”®ä¿æŒåž‹æ»¤æ³¢
+* @details:    °´¼ü±£³ÖÐÍÂË²¨
 ***********************************************************************
 **/
 uint8_t hold_filter(hold_filter_t *filter_p, uint32_t variable)
@@ -176,7 +176,7 @@ uint8_t hold_filter(hold_filter_t *filter_p, uint32_t variable)
 * @brief:      key_process(void)
 * @param:		   void
 * @retval:     void
-* @details:    æŒ‰é”®å¤„ç†å‡½æ•°(é•¿æŒ‰ï¼ŒçŸ­æŒ‰ï¼Œå•å‡»ï¼ŒåŒå‡»)
+* @details:    °´¼ü´¦Àíº¯Êý(³¤°´£¬¶Ì°´£¬µ¥»÷£¬Ë«»÷)
 ***********************************************************************
 **/
 void key_process(void)
@@ -195,7 +195,7 @@ void key_process(void)
 			switch (key_p->state_machine) 
 			{
 				case key_release:
-				if (key_p->bsp_hold_filter.result)  // æŒ‰é”®æŒ‰ä¸‹
+				if (key_p->bsp_hold_filter.result)  // °´¼ü°´ÏÂ
 				{
 					key_p->press_time = get_key_bsptick();
 					key_p->state_machine = key_short_pressing;
@@ -203,16 +203,16 @@ void key_process(void)
 					break;
 				
 				case key_short_pressing:
-					if (key_p->bsp_hold_filter.result)  // ä¾ç„¶æŒ‰ç€
+					if (key_p->bsp_hold_filter.result)  // ÒÀÈ»°´×Å
 					{
-						if (get_key_bsptick() - key_p->press_time > long_press_time)  // æŒ‰ä½çš„æ—¶é•¿è¶…è¿‡é•¿æŒ‰è§„å®šæ—¶é•¿
+						if (get_key_bsptick() - key_p->press_time > long_press_time)  // °´×¡µÄÊ±³¤³¬¹ý³¤°´¹æ¶¨Ê±³¤
 						{
 							key_p->press_time = get_key_bsptick();
-							key_p->key_value = key_long_press; // é•¿æŒ‰ç”Ÿæ•ˆ
+							key_p->key_value = key_long_press; // ³¤°´ÉúÐ§
 							key_p->state_machine = key_long_pressing;
 						}
 					} 
-					else // æ¾æ‰‹
+					else // ËÉÊÖ
 					{ 
 						key_p->release_time = get_key_bsptick();
 						key_p->state_machine = key_click_one_wait_for_double;
@@ -220,22 +220,22 @@ void key_process(void)
 					break;
 					
 				case key_click_one_wait_for_double:
-					if (get_key_bsptick() - key_p->press_time < click_one_wait_for_double_time)  // åœ¨åŒå‡»ç­‰å¾…æ—¶é—´å†…
+					if (get_key_bsptick() - key_p->press_time < click_one_wait_for_double_time)  // ÔÚË«»÷µÈ´ýÊ±¼äÄÚ
 					{
-						if (key_p->bsp_hold_filter.result)  // å†æ¬¡æŒ‰ä¸‹
+						if (key_p->bsp_hold_filter.result)  // ÔÙ´Î°´ÏÂ
 						{
-							key_p->key_value = key_click_double; // åŒå‡»ç”Ÿæ•ˆ
+							key_p->key_value = key_click_double; // Ë«»÷ÉúÐ§
 							key_p->state_machine = key_double_pressing;
 						}
 					} 
-					else  // è¶…æ—¶
+					else  // ³¬Ê±
 					{
-						key_p->key_value = key_click_one; // å•å‡»ç”Ÿæ•ˆ
+						key_p->key_value = key_click_one; // µ¥»÷ÉúÐ§
 						key_p->state_machine = key_release;
 					}
 					break;
 
-				case key_double_pressing: // åŒå‡»åŽæœªæ¾æ‰‹
+				case key_double_pressing: // Ë«»÷ºóÎ´ËÉÊÖ
 					if (!key_p->bsp_hold_filter.result) 
 					{
 						key_p->state_machine = key_release;
@@ -243,14 +243,14 @@ void key_process(void)
 					break;
 
 				case key_long_pressing:
-					if (key_p->bsp_hold_filter.result)  // ä»ç„¶æŒ‰ç€
+					if (key_p->bsp_hold_filter.result)  // ÈÔÈ»°´×Å
 					{	
 						if ((get_key_bsptick() - key_p->press_time) % long_press_effective_interval_time == 0) 
 						{
-							key_p->key_value = key_long_press; // é•¿æŒ‰ç”Ÿæ•ˆ
+							key_p->key_value = key_long_press; // ³¤°´ÉúÐ§
 						}
 					} 
-					else  // æ¾æ‰‹åŽå¤ä½
+					else  // ËÉÊÖºó¸´Î»
 					{	
 						key_p->state_machine = key_release;
 					}

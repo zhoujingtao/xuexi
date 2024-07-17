@@ -5,7 +5,7 @@ void app_MainInit(void)
 {
     led_driver_init();
 		key_driver_init();		
-		LCD_Init();//LCDåˆå§‹åŒ–
+		LCD_Init();//LCD³õÊ¼»¯
 		LCD_Fill(0,0,LCD_W,LCD_H,BLACK);	
 	
 	

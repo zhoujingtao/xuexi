@@ -49,7 +49,7 @@ uint32_t NTCRTemp[166]={
 * @brief:      adc_driver_init(void)
 * @param:		   void
 * @retval:     void
-* @details:    ADCç¡¬ä»¶ä½¿èƒ½
+* @details:    ADCÓ²¼şÊ¹ÄÜ
 ***********************************************************************
 **/
 void adc_driver_init(void)
@@ -77,13 +77,13 @@ void app_ADCsample(void)
 
 int32_t app_CurrentCount_process(int16_t adcval)
 {
-   /* è¿æ”¾å¢ç›Š:k=Rf/R
-      åç½®ç”µå‹:VREF=1.65V=2048
-      é‡‡æ ·ç”µé˜»:Rm=1mÎ©
-      è¿æ”¾è¾“å‡º:uo =k*(u2-u1)
+   /* ÔË·ÅÔöÒæ:k=Rf/R
+      Æ«ÖÃµçÑ¹:VREF=1.65V=2048
+      ²ÉÑùµç×è:Rm=1m¦¸
+      ÔË·ÅÊä³ö:uo =k*(u2-u1)
       u2-u1=I*Rm
       uo=(adcval-2048)*3.3V/4096
-      é‡‡é›†ç”µæµ:1 = uo/(Rm*k) */
+      ²É¼¯µçÁ÷:1 = uo/(Rm*k) */
 
    int32_t result=0;
 
@@ -95,15 +95,15 @@ int32_t app_CurrentCount_process(int16_t adcval)
 int32_t app_VoltageCount_process(int16_t adcval)
 {
    int32_t result=0;
-   /* ç”µå‹è®¡ç®— */
-   /* ç¼©å°ç”µå‹ç³»æ•°:k=(15k+15k+2k)/2k   VA=adcval*(3.3V/4096)*k */
-	result=adcval*330*17/4096;  //æ”¾å¤§100å€
+   /* µçÑ¹¼ÆËã */
+   /* ËõĞ¡µçÑ¹ÏµÊı:k=(15k+15k+2k)/2k   VA=adcval*(3.3V/4096)*k */
+	result=adcval*330*17/4096;  //·Å´ó100±¶
 
    return result;
 
 }
 
-//ç”µå‹æ¢ç®—æˆæ¸©åº¦
+//µçÑ¹»»Ëã³ÉÎÂ¶È
 float temp_data(int16_t adcval)
 {
 	float Rt=0;
@@ -129,9 +129,9 @@ int16_t app_TempCount_process(int16_t adcval)
 {
    uint8_t i;
    uint32_t result=0;
-   /* æ¸©åº¦è®¡ç®— */
+   /* ÎÂ¶È¼ÆËã */
    result=adcval*3300/4096;
-   RT=result*10900/(3300-result)*10;  //ç”µé˜»è¡¥å¿900Î©
+   RT=result*10900/(3300-result)*10;  //µç×è²¹³¥900¦¸
 
    for(i=0;i<166;i++)
    {
@@ -146,16 +146,16 @@ int16_t app_TempCount_process(int16_t adcval)
 
 void app_TransducersData_process(void)
 {
-   app_ADCsample();   //è·å– ADCé‡‡æ ·åŸå§‹å€¼
+   app_ADCsample();   //»ñÈ¡ ADC²ÉÑùÔ­Ê¼Öµ
 
    
-   //IA IB IC IBUS ç”µæµå€¼è·å–
+   //IA IB IC IBUS µçÁ÷Öµ»ñÈ¡
    Transducers_Data.IC = app_CurrentCount_process(Sample_Data.IC);
    Transducers_Data.IB = app_CurrentCount_process(Sample_Data.IB);
    Transducers_Data.IA = app_CurrentCount_process(Sample_Data.IA);
    Transducers_Data.IBUS = app_CurrentCount_process(Sample_Data.IBUS);
    
-   //VA VB VC VBUS ç”µå‹å€¼è·å–
+   //VA VB VC VBUS µçÑ¹Öµ»ñÈ¡
    Transducers_Data.VA = app_VoltageCount_process(Sample_Data.VA);
    Transducers_Data.VB = app_VoltageCount_process(Sample_Data.VB);
    Transducers_Data.VC = app_VoltageCount_process(Sample_Data.VC);
@@ -165,7 +165,7 @@ void app_TransducersData_process(void)
    Transducers_Data.NT2 = temp_data(Sample_Data.NT2);
    Transducers_Data.NT3 = temp_data(Sample_Data.NT3);
 	
-//   //NT1 NT2 NT3 æ¸©åº¦è·å–
+//   //NT1 NT2 NT3 ÎÂ¶È»ñÈ¡
 //   Transducers_Data.NT1 = app_TempCount_process(Sample_Data.NT1);
 //   Transducers_Data.NT2 = app_TempCount_process(Sample_Data.NT2);
 //   Transducers_Data.NT3 = app_TempCount_process(Sample_Data.NT3);

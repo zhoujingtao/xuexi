@@ -5,13 +5,13 @@
 #include "adc.h"
 
 
-#define adc1_samples  	5 		// å•é€šé“é‡‡æ ·ç‚¹æ•°
-#define adc1_channel  	9 		// é‡‡æ ·é€šé“æ•°
-#define adc1_length   	adc1_samples*adc1_channel 		// æ•°æ®æ•°
+#define adc1_samples  	5 		// µ¥Í¨µÀ²ÉÑùµãÊı
+#define adc1_channel  	9 		// ²ÉÑùÍ¨µÀÊı
+#define adc1_length   	adc1_samples*adc1_channel 		// Êı¾İÊı
 
-#define adc2_samples  	5 		// å•é€šé“é‡‡æ ·ç‚¹æ•°
-#define adc2_channel  	3 		// é‡‡æ ·é€šé“æ•°
-#define adc2_length   	adc2_samples*adc2_channel 		// æ•°æ®æ•°
+#define adc2_samples  	5 		// µ¥Í¨µÀ²ÉÑùµãÊı
+#define adc2_channel  	3 		// ²ÉÑùÍ¨µÀÊı
+#define adc2_length   	adc2_samples*adc2_channel 		// Êı¾İÊı
 
 extern uint16_t adc1_dma_value[adc1_samples][adc1_channel]; 
 extern uint16_t adc2_dma_value[adc2_samples][adc2_channel];

@@ -3,15 +3,15 @@
 
 #include "app.h"
 
-/* æŒ‰é”®æ°¸ä¹…å±è”½å€¼å±è”½ */
+/* °´¼üÓÀ¾ÃÆÁ±ÎÖµÆÁ±Î */
 #define key_alway_shield 0xFFFFFFFF
 
-/* æŒ‰é”®æ—¶é•¿å®šä¹‰ */
-#define click_one_wait_for_double_time 500       // åŒå‡»ä¸¤ä¸‹ä¹‹é—´çš„æœ€å¤§é—´éš”æ—¶é—´ï¼Œå•ä½ms
-#define long_press_time 1600                     // è¯†åˆ«ä¸ºé•¿æŒ‰çš„æ—¶é—´ï¼Œå•ä½ms
-#define long_press_effective_interval_time 10000 // é•¿æŒ‰æ—¶æ¯æ¬¡è§¦å‘çš„é—´éš”æ—¶é—´ï¼Œå•ä½ms
+/* °´¼üÊ±³¤¶¨Òå */
+#define click_one_wait_for_double_time 500       // Ë«»÷Á½ÏÂÖ®¼äµÄ×î´ó¼ä¸ôÊ±¼ä£¬µ¥Î»ms
+#define long_press_time 1600                     // Ê¶±ğÎª³¤°´µÄÊ±¼ä£¬µ¥Î»ms
+#define long_press_effective_interval_time 10000 // ³¤°´Ê±Ã¿´Î´¥·¢µÄ¼ä¸ôÊ±¼ä£¬µ¥Î»ms
 
-/* æŒ‰é”®ä¸ªæ•° */
+/* °´¼ü¸öÊı */
 typedef enum {
 	key_sw1,
 	key_sw2,
@@ -22,18 +22,18 @@ typedef enum {
 	key_num,
 } key_t;
 
-/* çŠ¶æ€æœº */
+/* ×´Ì¬»ú */
 typedef enum 
 {
-	key_release,                       // æŒ‰é”®é‡Šæ”¾çŠ¶æ€
-	key_short_pressing,                // æŒ‰é”®çŸ­æŒ‰çŠ¶æ€
-	key_double_pressing,               // æŒ‰é”®åŒå‡»çŠ¶æ€
-	key_click_one_wait_for_double,     // æŒ‰é”®å•å‡»ç­‰å¾…åŒå‡»çŠ¶æ€
-	key_long_pressing,                 // æŒ‰é”®é•¿æŒ‰çŠ¶æ€
-	key_state_machine_num,             // çŠ¶æ€æœºæ•°é‡ï¼Œç”¨äºè¾…åŠ©è®¡æ•°
+	key_release,                       // °´¼üÊÍ·Å×´Ì¬
+	key_short_pressing,                // °´¼ü¶Ì°´×´Ì¬
+	key_double_pressing,               // °´¼üË«»÷×´Ì¬
+	key_click_one_wait_for_double,     // °´¼üµ¥»÷µÈ´ıË«»÷×´Ì¬
+	key_long_pressing,                 // °´¼ü³¤°´×´Ì¬
+	key_state_machine_num,             // ×´Ì¬»úÊıÁ¿£¬ÓÃÓÚ¸¨Öú¼ÆÊı
 } key_state_machine_t;
 
-/* é”®å€¼ */
+/* ¼üÖµ */
 typedef enum {
 	key_none = key_state_machine_num,
 	key_click_one,
@@ -41,23 +41,23 @@ typedef enum {
 	key_long_press,
 } key_value_t;
 
-/* æŒ‰é”®è§¦å‘ */
+/* °´¼ü´¥·¢ */
 typedef struct {
-	uint32_t hold_time;             // æŒ‰é”®ä¿æŒæ—¶é—´
-	uint64_t time_point;            // æ—¶é—´ç‚¹
-	uint32_t trigger_variable;      // è§¦å‘å˜é‡
-	uint8_t last_variable_state;    // ä¸Šä¸€æ¬¡å˜é‡çŠ¶æ€
-	uint8_t result;                 // ç»“æœ
+	uint32_t hold_time;             // °´¼ü±£³ÖÊ±¼ä
+	uint64_t time_point;            // Ê±¼äµã
+	uint32_t trigger_variable;      // ´¥·¢±äÁ¿
+	uint8_t last_variable_state;    // ÉÏÒ»´Î±äÁ¿×´Ì¬
+	uint8_t result;                 // ½á¹û
 } hold_filter_t;
 
-/* æŒ‰é”®é©±åŠ¨å±‚ */
+/* °´¼üÇı¶¯²ã */
 typedef struct {
-	hold_filter_t bsp_hold_filter;    	// ç¡¬ä»¶å±‚çš„æŒ‰é”®æ˜¯å¦æŒ‰ä¸‹åˆ¤æ–­ï¼Œæ»¤æ³¢å™¨
-	uint32_t shield;                    // å±è”½æ—¶é—´ï¼š0ï¼šå®Œå…¨å±è”½ï¼Œ1ï¼šæŒ‰é”®ä½¿èƒ½ï¼Œå¤§äº1ï¼šå€’è®¡æ—¶å±è”½
-	uint32_t press_time;                // æŒ‰ä½å¼€å§‹æ—¶é—´
-	uint32_t release_time;              // é‡Šæ”¾å¼€å§‹æ—¶é—´
-	key_state_machine_t state_machine;     // æŒ‰é”®å½“å‰æŒç»­çŠ¶æ€ï¼ˆçŠ¶æ€æœºï¼‰
-	key_value_t key_value;             // é”®å€¼
+	hold_filter_t bsp_hold_filter;    	// Ó²¼ş²ãµÄ°´¼üÊÇ·ñ°´ÏÂÅĞ¶Ï£¬ÂË²¨Æ÷
+	uint32_t shield;                    // ÆÁ±ÎÊ±¼ä£º0£ºÍêÈ«ÆÁ±Î£¬1£º°´¼üÊ¹ÄÜ£¬´óÓÚ1£ºµ¹¼ÆÊ±ÆÁ±Î
+	uint32_t press_time;                // °´×¡¿ªÊ¼Ê±¼ä
+	uint32_t release_time;              // ÊÍ·Å¿ªÊ¼Ê±¼ä
+	key_state_machine_t state_machine;     // °´¼üµ±Ç°³ÖĞø×´Ì¬£¨×´Ì¬»ú£©
+	key_value_t key_value;             // ¼üÖµ
 } key_driver_t;
 
 void key_driver_init(void);

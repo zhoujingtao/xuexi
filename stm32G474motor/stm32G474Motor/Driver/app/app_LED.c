@@ -6,7 +6,7 @@
 * @brief:      led_driver_init(void)
 * @param:		   void
 * @retval:     void
-* @details:    led é©±åŠ¨åˆå§‹åŒ–ï¼Œé»˜è®¤æ‰€æœ‰ledä¸ç‚¹äº®
+* @details:    led Çı¶¯³õÊ¼»¯£¬Ä¬ÈÏËùÓĞled²»µãÁÁ
 ***********************************************************************
 **/
 void led_driver_init(void)
@@ -17,9 +17,9 @@ void led_driver_init(void)
 /**
 ***********************************************************************
 * @brief:      led_get_color(led_color_t led)
-* @param:		   ledï¼šledé¢œè‰²æ ‡å¿—
-* @retval:     ledé¢œè‰²æ ‡å¿—
-* @details:    è·å–ledçš„é¢œè‰²æ ‡å¿—ï¼Œä»¥å†³å®šç‚¹äº®å“ªä¸€ä¸ª
+* @param:		   led£ºledÑÕÉ«±êÖ¾
+* @retval:     ledÑÕÉ«±êÖ¾
+* @details:    »ñÈ¡ledµÄÑÕÉ«±êÖ¾£¬ÒÔ¾ö¶¨µãÁÁÄÄÒ»¸ö
 ***********************************************************************
 **/
 led_bsp_t *led_get_color(led_color_t led)
@@ -47,9 +47,9 @@ led_bsp_t *led_get_color(led_color_t led)
 /**
 ***********************************************************************
 * @brief:      led_on(led_color_t leds)
-* @param:		   ledsï¼šledé¢œè‰²æ ‡å¿—
+* @param:		   leds£ºledÑÕÉ«±êÖ¾
 * @retval:     void
-* @details:    ç‚¹äº®å¯¹åº”é¢œè‰²çš„led
+* @details:    µãÁÁ¶ÔÓ¦ÑÕÉ«µÄled
 ***********************************************************************
 **/
 void led_on(led_color_t leds)
@@ -66,9 +66,9 @@ void led_on(led_color_t leds)
 /**
 ***********************************************************************
 * @brief:      led_off(led_color_t leds)
-* @param:		   ledsï¼šledé¢œè‰²æ ‡å¿—
+* @param:		   leds£ºledÑÕÉ«±êÖ¾
 * @retval:     void
-* @details:    å…³é—­å¯¹åº”é¢œè‰²çš„led
+* @details:    ¹Ø±Õ¶ÔÓ¦ÑÕÉ«µÄled
 ***********************************************************************
 **/
 void led_off(led_color_t leds)
@@ -85,9 +85,9 @@ void led_off(led_color_t leds)
 /**
 ***********************************************************************
 * @brief:      led_toggle(led_color_t leds)
-* @param:		   ledsï¼šledé¢œè‰²æ ‡å¿—
+* @param:		   leds£ºledÑÕÉ«±êÖ¾
 * @retval:     void
-* @details:    ç¿»è½¬å¯¹åº”é¢œè‰²çš„led
+* @details:    ·­×ª¶ÔÓ¦ÑÕÉ«µÄled
 ***********************************************************************
 **/
 void led_toggle(led_color_t leds)

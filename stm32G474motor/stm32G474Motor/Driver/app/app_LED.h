@@ -3,24 +3,24 @@
 
 #include "app.h"
 
-/* led é¢œè‰²å®šä¹‰ */
+/* led ÑÕÉ«¶¨Òå */
 typedef enum
 {
-	led_pow_red     = 0x0001, // çº¢è‰²ç”µæºLED
-	led_pow_blue    = 0x0002, // è“è‰²ç”µæºLED
-	led_pow_yellow  = 0x0003, // é»„è‰²ç”µæºLED
-	led_gps_red     = 0x0010, // çº¢è‰²GPS LED
-	led_gps_blue    = 0x0020, // è“è‰²GPS LED
-	led_gps_yellow  = 0x0030, // é»„è‰²GPS LED
-	led_rf_red      = 0x0100, // çº¢è‰²å°„é¢‘ LED
-	led_rf_blue     = 0x0200, // è“è‰²å°„é¢‘ LED
-	led_rf_yellow   = 0x0300, // é»„è‰²å°„é¢‘ LED
-	led_net_greener = 0x1000, // ç»¿è‰²ç½‘ç»œ LED
-	led_net_blue    = 0x2000, // è“è‰²ç½‘ç»œ LED
-	led_net_yellow  = 0x3000, // é»„è‰²ç½‘ç»œ LED
-	led_all_red     = 0x1111, // æ‰€æœ‰çº¢è‰² LED
-	led_all_blue    = 0x2222, // æ‰€æœ‰è“è‰² LED
-	led_all         = 0x3333  // æ‰€æœ‰ LED
+	led_pow_red     = 0x0001, // ºìÉ«µçÔ´LED
+	led_pow_blue    = 0x0002, // À¶É«µçÔ´LED
+	led_pow_yellow  = 0x0003, // »ÆÉ«µçÔ´LED
+	led_gps_red     = 0x0010, // ºìÉ«GPS LED
+	led_gps_blue    = 0x0020, // À¶É«GPS LED
+	led_gps_yellow  = 0x0030, // »ÆÉ«GPS LED
+	led_rf_red      = 0x0100, // ºìÉ«ÉäÆµ LED
+	led_rf_blue     = 0x0200, // À¶É«ÉäÆµ LED
+	led_rf_yellow   = 0x0300, // »ÆÉ«ÉäÆµ LED
+	led_net_greener = 0x1000, // ÂÌÉ«ÍøÂç LED
+	led_net_blue    = 0x2000, // À¶É«ÍøÂç LED
+	led_net_yellow  = 0x3000, // »ÆÉ«ÍøÂç LED
+	led_all_red     = 0x1111, // ËùÓĞºìÉ« LED
+	led_all_blue    = 0x2222, // ËùÓĞÀ¶É« LED
+	led_all         = 0x3333  // ËùÓĞ LED
 } led_color_t;
 
 void led_driver_init(void);

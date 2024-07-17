@@ -1,7 +1,7 @@
 #include "bsp_adc.h"
 
 
-/* adc_dma æ•°æ®å­˜å‚¨æ•°ç»„*/
+/* adc_dma Êı¾İ´æ´¢Êı×é*/
 uint16_t adc1_dma_value[adc1_samples][adc1_channel];
 uint16_t adc2_dma_value[adc2_samples][adc2_channel];
 
@@ -10,7 +10,7 @@ uint16_t adc2_dma_value[adc2_samples][adc2_channel];
 * @brief:      adc_bsp_init(void)
 * @param:		   void
 * @retval:     void
-* @details:    ADCç¡¬ä»¶ä½¿èƒ½
+* @details:    ADCÓ²¼şÊ¹ÄÜ
 ***********************************************************************
 **/
 void adc_bsp_init(void)
@@ -24,9 +24,9 @@ void adc_bsp_init(void)
 /**
 ***********************************************************************
 * @brief:      HAL_ADCEx_InjectedConvCpltCallback()
-* @param[in]:	 hadc  adcå¥æŸ„
+* @param[in]:	 hadc  adc¾ä±ú
 * @retval:     void
-* @details:    HALåº“çš„ä¸­æ–­å›è°ƒå‡½æ•°
+* @details:    HAL¿âµÄÖĞ¶Ï»Øµ÷º¯Êı
 ***********************************************************************
 **/
 void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef* hadc)
@@ -45,9 +45,9 @@ void HAL_ADCEx_InjectedConvCpltCallback(ADC_HandleTypeDef* hadc)
 /**
 ***********************************************************************
 * @brief:      adc1_injected(void)
-* @param[in]:	 hadc  adcå¥æŸ„
+* @param[in]:	 hadc  adc¾ä±ú
 * @retval:     void
-* @details:    ä¾›ç”¨æˆ·è°ƒç”¨çš„å¼±å‡½æ•°
+* @details:    ¹©ÓÃ»§µ÷ÓÃµÄÈõº¯Êı
 ***********************************************************************
 **/
 __weak void adc1_injected_callback(void)
@@ -57,9 +57,9 @@ __weak void adc1_injected_callback(void)
 /**
 ***********************************************************************
 * @brief:      adc2_injected(void)
-* @param[in]:	 hadc  adcå¥æŸ„
+* @param[in]:	 hadc  adc¾ä±ú
 * @retval:     void
-* @details:    ä¾›ç”¨æˆ·è°ƒç”¨çš„å¼±å‡½æ•°
+* @details:    ¹©ÓÃ»§µ÷ÓÃµÄÈõº¯Êı
 ***********************************************************************
 **/
 __weak void adc2_injected_callback(void)
@@ -71,9 +71,9 @@ __weak void adc2_injected_callback(void)
 /**
 ***********************************************************************
 * @brief:      adc1_median_filter(uint8_t channel)
-* @param[in]:	 channel adcé€šé“
+* @param[in]:	 channel adcÍ¨µÀ
 * @retval:     void
-* @details:    ä¸­å€¼æ»¤æ³¢ 
+* @details:    ÖĞÖµÂË²¨ 
 ***********************************************************************
 **/
 uint16_t adc1_median_filter(uint8_t channel)
@@ -97,9 +97,9 @@ uint16_t adc1_median_filter(uint8_t channel)
 /**
 ***********************************************************************
 * @brief:      adc1_avg_filter(uint8_t channel)
-* @param[in]:	 channel adcé€šé“
+* @param[in]:	 channel adcÍ¨µÀ
 * @retval:     void
-* @details:    å‡å€¼æ»¤æ³¢ 
+* @details:    ¾ùÖµÂË²¨ 
 ***********************************************************************
 **/
 uint16_t adc1_avg_filter(uint8_t channel)
@@ -115,9 +115,9 @@ uint16_t adc1_avg_filter(uint8_t channel)
 /**
 ***********************************************************************
 * @brief:      adc2_median_filter(uint8_t channel)
-* @param[in]:	 channel adcé€šé“
+* @param[in]:	 channel adcÍ¨µÀ
 * @retval:     void
-* @details:    ä¸­å€¼æ»¤æ³¢ 
+* @details:    ÖĞÖµÂË²¨ 
 ***********************************************************************
 **/
 uint16_t adc2_median_filter(uint8_t channel)
@@ -140,9 +140,9 @@ uint16_t adc2_median_filter(uint8_t channel)
 /**
 ***********************************************************************
 * @brief:      adc2_avg_filter(uint8_t channel)
-* @param[in]:	 channel adcé€šé“
+* @param[in]:	 channel adcÍ¨µÀ
 * @retval:     void
-* @details:    å‡å€¼æ»¤æ³¢ 
+* @details:    ¾ùÖµÂË²¨ 
 ***********************************************************************
 **/
 uint16_t adc2_avg_filter(uint8_t channel)

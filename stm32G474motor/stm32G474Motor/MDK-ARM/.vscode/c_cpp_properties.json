@@ -3,19 +3,19 @@
         {
             "name": "stm32G474Motor",
             "includePath": [
-                "c:\\Users\\Administrator\\Desktop\\xuexi\\stm32G474motor\\stm32G474Motor\\Core\\Inc",
-                "c:\\Users\\Administrator\\Desktop\\xuexi\\stm32G474motor\\stm32G474Motor\\Drivers\\STM32G4xx_HAL_Driver\\Inc",
-                "c:\\Users\\Administrator\\Desktop\\xuexi\\stm32G474motor\\stm32G474Motor\\Drivers\\STM32G4xx_HAL_Driver\\Inc\\Legacy",
-                "c:\\Users\\Administrator\\Desktop\\xuexi\\stm32G474motor\\stm32G474Motor\\Drivers\\CMSIS\\Device\\ST\\STM32G4xx\\Include",
-                "c:\\Users\\Administrator\\Desktop\\xuexi\\stm32G474motor\\stm32G474Motor\\Drivers\\CMSIS\\Include",
-                "c:\\Users\\Administrator\\Desktop\\xuexi\\stm32G474motor\\stm32G474Motor\\Driver\\app",
-                "c:\\Users\\Administrator\\Desktop\\xuexi\\stm32G474motor\\stm32G474Motor\\Driver\\bsp",
-                "c:\\Users\\Administrator\\Desktop\\xuexi\\stm32G474motor\\stm32G474Motor\\Driver\\OS",
+                "c:\\Users\\Administrator\\Desktop\\1\\xuexi\\stm32G474motor\\stm32G474Motor\\Core\\Inc",
+                "c:\\Users\\Administrator\\Desktop\\1\\xuexi\\stm32G474motor\\stm32G474Motor\\Drivers\\STM32G4xx_HAL_Driver\\Inc",
+                "c:\\Users\\Administrator\\Desktop\\1\\xuexi\\stm32G474motor\\stm32G474Motor\\Drivers\\STM32G4xx_HAL_Driver\\Inc\\Legacy",
+                "c:\\Users\\Administrator\\Desktop\\1\\xuexi\\stm32G474motor\\stm32G474Motor\\Drivers\\CMSIS\\Device\\ST\\STM32G4xx\\Include",
+                "c:\\Users\\Administrator\\Desktop\\1\\xuexi\\stm32G474motor\\stm32G474Motor\\Drivers\\CMSIS\\Include",
+                "c:\\Users\\Administrator\\Desktop\\1\\xuexi\\stm32G474motor\\stm32G474Motor\\Driver\\app",
+                "c:\\Users\\Administrator\\Desktop\\1\\xuexi\\stm32G474motor\\stm32G474Motor\\Driver\\bsp",
+                "c:\\Users\\Administrator\\Desktop\\1\\xuexi\\stm32G474motor\\stm32G474Motor\\Driver\\OS",
                 "D:\\Keil_v5\\ARM\\ARMCC\\include",
                 "D:\\Keil_v5\\ARM\\ARMCC\\include\\rw",
-                "c:\\Users\\Administrator\\Desktop\\xuexi\\stm32G474motor\\stm32G474Motor\\MDK-ARM",
-                "c:\\Users\\Administrator\\Desktop\\xuexi\\stm32G474motor\\stm32G474Motor\\Core\\Src",
-                "c:\\Users\\Administrator\\Desktop\\xuexi\\stm32G474motor\\stm32G474Motor\\Drivers\\STM32G4xx_HAL_Driver\\Src"
+                "c:\\Users\\Administrator\\Desktop\\1\\xuexi\\stm32G474motor\\stm32G474Motor\\MDK-ARM",
+                "c:\\Users\\Administrator\\Desktop\\1\\xuexi\\stm32G474motor\\stm32G474Motor\\Core\\Src",
+                "c:\\Users\\Administrator\\Desktop\\1\\xuexi\\stm32G474motor\\stm32G474Motor\\Drivers\\STM32G4xx_HAL_Driver\\Src"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

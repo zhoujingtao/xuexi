@@ -17,7 +17,7 @@ led_bsp_t led_bsp;
 * @brief:      led_bsp_init(void)
 * @param:		   void
 * @retval:     void
-* @details:    ledå¼•è„šåˆå§‹åŒ–
+* @details:    ledÒı½Å³õÊ¼»¯
 ***********************************************************************
 **/
 void led_bsp_init(void)
@@ -38,9 +38,9 @@ void led_bsp_init(void)
 /**
 ***********************************************************************
 * @brief:      led_bsp_on(led_bsp_gpio_t *port, uint16_t pin)
-* @param:		   portï¼šGPIO   pinï¼šledå¼•è„š
+* @param:		   port£ºGPIO   pin£ºledÒı½Å
 * @retval:     void
-* @details:    IOè®¾ä¸ºé«˜ç”µå¹³
+* @details:    IOÉèÎª¸ßµçÆ½
 ***********************************************************************
 **/
 void led_bsp_on(led_bsp_gpio_t *port, uint16_t pin)
@@ -50,9 +50,9 @@ void led_bsp_on(led_bsp_gpio_t *port, uint16_t pin)
 /**
 ***********************************************************************
 * @brief:      led_bsp_off(led_bsp_gpio_t *port, uint16_t pin)
-* @param:		   portï¼šGPIO   pinï¼šledå¼•è„š
+* @param:		   port£ºGPIO   pin£ºledÒı½Å
 * @retval:     void
-* @details:    IOè®¾ä¸ºä½ç”µå¹³
+* @details:    IOÉèÎªµÍµçÆ½
 ***********************************************************************
 **/
 void led_bsp_off(led_bsp_gpio_t *port, uint16_t pin)
@@ -62,9 +62,9 @@ void led_bsp_off(led_bsp_gpio_t *port, uint16_t pin)
 /**
 ***********************************************************************
 * @brief:      led_bsp_toggle(led_bsp_gpio_t *port, uint16_t pin)
-* @param:		   portï¼šGPIO   pinï¼šledå¼•è„š
+* @param:		   port£ºGPIO   pin£ºledÒı½Å
 * @retval:     void
-* @details:    ç¿»è½¬IOç”µå¹³
+* @details:    ·­×ªIOµçÆ½
 ***********************************************************************
 **/
 void led_bsp_toggle(led_bsp_gpio_t *port, uint16_t pin)
@@ -75,9 +75,9 @@ void led_bsp_toggle(led_bsp_gpio_t *port, uint16_t pin)
 /**
 ***********************************************************************
 * @brief:      key_bsp_read_pin(key_bsp_gpio_t *port, uint16_t pin)
-* @param:		   port: GPIO   pin: å¼•è„šå·
-* @retval:     çŠ¶æ€æ ‡å¿—
-* @details:    è¯»å–æŒ‰é”®IOçŠ¶æ€
+* @param:		   port: GPIO   pin: Òı½ÅºÅ
+* @retval:     ×´Ì¬±êÖ¾
+* @details:    ¶ÁÈ¡°´¼üIO×´Ì¬
 ***********************************************************************
 **/
 key_bsp_state key_bsp_read_pin(key_bsp_gpio_t *port, uint16_t pin)
@@ -92,8 +92,8 @@ key_bsp_state key_bsp_read_pin(key_bsp_gpio_t *port, uint16_t pin)
 ***********************************************************************
 * @brief:      get_key_bsptick(void)
 * @param:		   void
-* @retval:     æ»´ç­”æ—¶é—´
-* @details:    è·å–æŒ‰é”®çš„æ»´ç­”æ—¶é—´
+* @retval:     µÎ´ğÊ±¼ä
+* @details:    »ñÈ¡°´¼üµÄµÎ´ğÊ±¼ä
 ***********************************************************************
 **/
 uint32_t get_key_bsptick(void)
